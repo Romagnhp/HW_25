@@ -17,8 +17,13 @@ class Circle:
         return True if self.lengthArc() > __o.lengthArc() else False 
 
 # reload operator +
-    def __add__(self, o:float)->float:
-        self.radius = float(self.radius) + o
+    def __add__(self, __o:float)->float:
+        self.radius = float(self.radius) + __o
+        return self.radius
+
+# reload operator -
+    def __sub__(self, __o:float)->float:
+        self.radius = float(self.radius) - __o
         return self.radius
 
 
@@ -29,37 +34,36 @@ class Circle:
 
 
 
-
-
-
-r1 = float(input("Enter first radius of circle = "))
+r1 = float(input("\nEnter first radius of circle = "))
 a1 = float(input("Enter first central angel of arc = "))
 
-r2 = float(input("Enter second radius of circle = "))
-a2 = float(input("Enter second central angle of arc = "))
-
-# arr = [r1, a1, r2, a2]
-# if aar is 
+r2 = float(input("\nEnter second radius of circle = "))
+a2 = float(input("Enter second central angle of arc = "))    
 
 c1 = Circle(r1, a1)
 c2 = Circle(r2, a2)
 
+# compering by radius
 if c1 == c2:
-    print("radiuses of C1 and C1 are equal")
+    print("\nradiuses of C1 and C1 are equal\n")
 else:
-    print("radiuses of C1 and C2 are not equal")
+    print("\nradiuses of C1 and C2 are not equal\n")
 
+# compering by arc angle
 if c1 > c2:
-    print ("arc cicle C1 greater then C2")
+    print ("arc lenght cicle C1 greater then C2\n")
 elif c2 > c1:
-    print ("arc cicle C1 less then C2")
+    print ("arc length cicle C1 less then C2\n")
 else:
-    print("arc's of circles are equal")
+    print("arc's of circles are equal\n")
 
 print(c1,c2)
 
-
+# resizing of radius
 c1 + 2
 c2 + 5
 print(c1,c2)
 
+c1 - 2
+c2 - 5
+print(c1,c2)
