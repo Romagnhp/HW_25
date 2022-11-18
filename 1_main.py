@@ -17,8 +17,10 @@ class Circle:
         return True if self.lengthArc() > __o.lengthArc() else False 
 
 # reload operator +
-    def __add__(self, __o:float):
-        return self.radius + __o
+    def __add__(self, o:float)->float:
+        self.radius = float(self.radius) + o
+        return self.radius
+
 
 # reload __str__ method
     def __str__(self) -> str:
@@ -56,6 +58,8 @@ else:
 
 print(c1,c2)
 
-c1 + 2.0
+
+c1 + 2
+c2 + 5
 print(c1,c2)
 
